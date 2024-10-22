@@ -1,0 +1,7 @@
+Information Expert: Assign responsibilities to the class that has the needed information to perform them.
+
+Creator: Designate a class to handle the creation of objects, promoting clear ownership.
+
+Controller: Use a class to manage the flow of control in the system, acting as a mediator.
+
+Low Coupling: Minimize dependencies between classes to improve maintainability and flexibility.
