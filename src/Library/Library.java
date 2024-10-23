@@ -43,6 +43,13 @@ public class Library {
     public void createMember(String name){
         Member member = new Member(name, ID++);
         members.put(name, member);
+        System.out.println("Member:" + member.getName() + " With ID: " + member.getMemberID() + ". Created.");
+    }
+    
+    public void printCatalog() {
+    	for(Book b : catalog) {
+    		System.out.println(b.toString());
+    	}
     }
 
 }
