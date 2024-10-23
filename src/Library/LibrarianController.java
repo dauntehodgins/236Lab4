@@ -11,7 +11,7 @@ public class LibrarianController {
             b.setAvailablity();
             m.BorrowBook(b);
         }else{
-            System.out.println("Book " + b.getTitle() + " is not available");
+            System.out.println("Sorry " + m.getName() + "! " + b.getTitle() + " is not available.");
         }
     }
     public void returnBook(Member m, Book b){

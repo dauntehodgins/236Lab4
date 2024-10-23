@@ -82,7 +82,7 @@ public static void main(String[] args) {
 	 
     // Adding some books to the catalog
 	System.out.println("\n *** Adding \"Dune\" to the library:");
-	library.addBook("Dune");
+	library.addBook("");
 	
 	System.out.println("\n *** Adding \"1984\" to the library:");
 	library.addBook("1984"); 

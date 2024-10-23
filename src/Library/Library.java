@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Library {
-	private ArrayList<Book> catalog;
+	private ArrayList<Book> catalog = new ArrayList<>();
     private HashMap<String , Member> members = new HashMap<>();
-    private int ID = 0;
+    private int ID = 1;
     //private ArrayList<Book> borrowedBooks;
 
-	// TODO: implement functionality of Library class
+	public Library() {}
 
     /**
      *
@@ -60,9 +60,20 @@ public class Library {
         members.put(name, member);
         System.out.println("Member:" + member.getName() + " With ID: " + member.getMemberID() + ". Created.");
     }
+    //returns member object based on name
     public Member getMember(String name){
         return members.get(name);
     }
+    //returns book object based on title
+    public Book getBook(String title){
+        for(Book b : catalog) {
+            if(b.getTitle().contains(title)) {
+                return b;
+            }
+        }
+        return null;
+    }
+
     public void printMembers(){
         for(Member member : members.values()) {
             System.out.println(member.toString());
