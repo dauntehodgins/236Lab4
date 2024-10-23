@@ -60,7 +60,14 @@ public class Library {
         members.put(name, member);
         System.out.println("Member:" + member.getName() + " With ID: " + member.getMemberID() + ". Created.");
     }
-    
+    public Member getMember(String name){
+        return members.get(name);
+    }
+    public void printMembers(){
+        for(Member member : members.values()) {
+            System.out.println(member.toString());
+        }
+    }
     public void printCatalog() {
     	for(Book b : catalog) {
     		System.out.println(b.toString());

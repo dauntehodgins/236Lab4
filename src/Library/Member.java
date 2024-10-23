@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Member {
 	private String name;
-	private int memberID;
+	private int memberID = 1;
 	private ArrayList<Book> borrowedBooks;
 
 	public Member(String name, int memberID) {
@@ -27,6 +27,9 @@ public class Member {
 	}
 	public int getMemberID() {
 		return memberID;
+	}
+	public String toString() {
+		return "Member " + memberID + ": " + name;
 	}
 	// DONE: implement collection of borrowed books
 	
