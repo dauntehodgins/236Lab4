@@ -6,7 +6,7 @@ public class LibrarianController {
 	// Delegates tasks to the appropriate objects.
 	
 	// TODO: implement functionality of LibrarianController class
-    private void borrowBook(Member m, Book b){
+    public void borrowBook(Member m, Book b){
         if(b.isAvailable()){
             b.setAvailablity();
             m.BorrowBook(b);
@@ -14,7 +14,7 @@ public class LibrarianController {
             System.out.println("Book " + b.getTitle() + " is not available");
         }
     }
-    private void returnBook(Member m, Book b){
+    public void returnBook(Member m, Book b){
         m.returnBook(b);
         b.setAvailablity();
         //this will ensure the book is available (isAvailable == True) when it's returned
