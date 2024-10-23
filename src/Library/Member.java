@@ -28,6 +28,12 @@ public class Member {
 	public int getMemberID() {
 		return memberID;
 	}
+	
+	public String toString() {
+		
+		
+		return this.name+" "+this.memberID;
+	}
 	// DONE: implement collection of borrowed books
 	
 	// TODO: implement functionality of Member class

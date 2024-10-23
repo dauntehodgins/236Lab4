@@ -44,5 +44,18 @@ public class Library {
         Member member = new Member(name, ID++);
         members.put(name, member);
     }
+    
+    public boolean lookUpMember(String memberName){
+    	
+    if(members.containsKey(memberName)==true) {
+    	
+    	System.out.println(members.get(memberName).toString());
+    	return true;
+    	
+    }	
+    	return false;
+    }
+    
+    
 
 }

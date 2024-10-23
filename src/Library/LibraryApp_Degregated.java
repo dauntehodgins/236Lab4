@@ -8,6 +8,7 @@ import java.util.HashMap;
 public class LibraryApp_Degregated {
 
  private ArrayList<String> availableBooks = new ArrayList<>();
+ 
  private HashMap<String, ArrayList<String>> memberBorrowedBooks = new HashMap<>();
 
  // Adds a book to the library catalog
