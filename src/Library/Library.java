@@ -29,6 +29,21 @@ public class Library {
         //TODO: Handle cases where a book with the same title is already in the system
         //Book.available() maybe? keep track of how many of the same books are available
     }
+    
+    /**
+     * 
+     * @param title - title of the book we are looking for
+     * @return true if book is found.
+     */
+    public boolean findBook(String title) {
+    	for(Book b : catalog) {
+    		if(b.getTitle().contains(title)) {
+    			System.out.println("Found " + b.toString());
+    			return true;
+    		}
+    	}
+    	return false;
+    }
 
     /**
      *
@@ -43,6 +58,13 @@ public class Library {
     public void createMember(String name){
         Member member = new Member(name, ID++);
         members.put(name, member);
+        System.out.println("Member:" + member.getName() + " With ID: " + member.getMemberID() + ". Created.");
+    }
+    
+    public void printCatalog() {
+    	for(Book b : catalog) {
+    		System.out.println(b.toString());
+    	}
     }
     
     public boolean lookUpMember(String memberName){
