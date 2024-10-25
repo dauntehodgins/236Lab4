@@ -31,7 +31,6 @@ public class Member {
 	
 	public String toString() {
 		
-		
 		return this.name+" "+this.memberID;
 	}
 	// DONE: implement collection of borrowed books

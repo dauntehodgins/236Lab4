@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public class Library {
 	private ArrayList<Book> catalog;
-    private HashMap<String , Member> members = new HashMap<>();
+    private HashMap<Integer, Member> members = new HashMap<>();
     private int ID = 0;
     //private ArrayList<Book> borrowedBooks;
 
@@ -57,7 +57,7 @@ public class Library {
      */
     public void createMember(String name){
         Member member = new Member(name, ID++);
-        members.put(name, member);
+        members.put(ID, member);
         System.out.println("Member:" + member.getName() + " With ID: " + member.getMemberID() + ". Created.");
     }
     
@@ -69,11 +69,9 @@ public class Library {
     
     public boolean lookUpMember(String memberName){
     	
-    if(members.containsKey(memberName)==true) {
-    	
-    	System.out.println(members.get(memberName).toString());
-    	return true;
-    	
+    if(members.containsKey(ID)==true) {
+    	System.out.println(members.get(ID).toString());
+    	return true;	
     }	
     	return false;
     }
