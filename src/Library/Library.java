@@ -1,6 +1,5 @@
 //Creator: Designate a class to handle the creation of objects, promoting clear ownership.
 //Controller: Use a class to manage the flow of control in the system, acting as a mediator.
-//Creator: Designate a class to handle the creation of objects, promoting clear ownership.
 
 
 //	Manage the catalog of books and members.
@@ -12,7 +11,7 @@ import java.util.HashMap;
 
 public class Library {
 	private ArrayList<Book> catalog = new ArrayList<>();
-    private HashMap<String , Member> members = new HashMap<>();
+    private HashMap<String, Member> members = new HashMap<>();
     private int ID = 1;
     //private ArrayList<Book> borrowedBooks;
 
@@ -28,6 +27,17 @@ public class Library {
         catalog.add(book);
         //TODO: Handle cases where a book with the same title is already in the system
         //Book.available() maybe? keep track of how many of the same books are available
+    }
+
+    /**
+     * Prints out books available.
+     */
+    public void getAvailableBooks(){
+        for(Book book : catalog){
+            if(book.isAvailable()){
+                System.out.println(book.getTitle() + " is available!");
+            }
+        }
     }
     
     /**

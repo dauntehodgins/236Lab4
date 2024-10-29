@@ -10,6 +10,7 @@ public class LibrarianController {
         if(b.isAvailable()){
             b.setAvailablity();
             m.BorrowBook(b);
+            System.out.println(m.getName() + " borrowed " + b.getTitle());
         }else{
             System.out.println("Sorry " + m.getName() + "! " + b.getTitle() + " is not available.");
         }
@@ -19,7 +20,7 @@ public class LibrarianController {
         b.setAvailablity();
         //this will ensure the book is available (isAvailable == True) when it's returned
         if(b.isAvailable()){
-            System.out.println("Book " + b.getTitle() + " is returned");
+            System.out.println(b.getTitle() + " was returned by " + m.getName() + ".");
         }else{
             b.setAvailablity();
         }

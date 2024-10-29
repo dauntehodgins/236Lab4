@@ -17,11 +17,9 @@ public class Member {
 	}
 	//LibrarianController will only call this if it is available, so we don't need to check if it's available
 	public void BorrowBook(Book book) {
-		System.out.println(name + " Borrowed " + book.getTitle());
 		borrowedBooks.add(book);
 	}
 	public void returnBook(Book book) {
-		System.out.println(name + " Returned " + book.getTitle());
 		borrowedBooks.remove(book);
 	}
 	public String getName() {
