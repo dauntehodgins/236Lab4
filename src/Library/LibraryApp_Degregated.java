@@ -8,7 +8,6 @@ import java.util.HashMap;
 public class LibraryApp_Degregated {
 
  private ArrayList<String> availableBooks = new ArrayList<>();
- 
  private HashMap<String, ArrayList<String>> memberBorrowedBooks = new HashMap<>();
 
  // Adds a book to the library catalog
@@ -83,7 +82,7 @@ public static void main(String[] args) {
 	 
     // Adding some books to the catalog
 	System.out.println("\n *** Adding \"Dune\" to the library:");
-	library.addBook("Dune");
+	library.addBook("");
 	
 	System.out.println("\n *** Adding \"1984\" to the library:");
 	library.addBook("1984"); 

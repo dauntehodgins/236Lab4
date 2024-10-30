@@ -26,7 +26,7 @@ public class Book {
 		return isAvailable;
 	}
 	public String toString() {
-		return "Title: " + title + ",by Author: " + author + ", is currently " + (isAvailable ? "available" : "not available");
+		return title + ", by " + author + ", is currently " + (isAvailable ? "available" : "not available");
 	}
 	
 	// TODO: implement Book functionality 

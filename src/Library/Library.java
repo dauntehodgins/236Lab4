@@ -1,6 +1,5 @@
 //Creator: Designate a class to handle the creation of objects, promoting clear ownership.
 //Controller: Use a class to manage the flow of control in the system, acting as a mediator.
-//Creator: Designate a class to handle the creation of objects, promoting clear ownership.
 
 
 //	Manage the catalog of books and members.
@@ -11,12 +10,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Library {
-	private ArrayList<Book> catalog;
-    private HashMap<Integer, Member> members = new HashMap<>();
-    private int ID = 0;
+	private ArrayList<Book> catalog = new ArrayList<>();
+    private HashMap<String, Member> members = new HashMap<>();
+    private int ID = 1;
     //private ArrayList<Book> borrowedBooks;
 
-	// TODO: implement functionality of Library class
+	public Library() {}
 
     /**
      *
@@ -28,6 +27,29 @@ public class Library {
         catalog.add(book);
         //TODO: Handle cases where a book with the same title is already in the system
         //Book.available() maybe? keep track of how many of the same books are available
+    }
+    
+    public void removeMember(Member member) {
+    	
+    	for(Book b : member.borrowedBooks) {
+    		b.setAvailablity();
+    		catalog.add(b);
+    	}
+    	
+    	if(members.containsKey(member.getName())) {
+    		members.remove(member.getName());
+    	}
+    }
+
+    /**
+     * Prints out books available.
+     */
+    public void getAvailableBooks(){
+        for(Book book : catalog){
+            if(book.isAvailable()){
+                System.out.println(book.getTitle() + " is available!");
+            }
+        }
     }
     
     /**
@@ -57,25 +79,32 @@ public class Library {
      */
     public void createMember(String name){
         Member member = new Member(name, ID++);
-        members.put(ID, member);
+        members.put(name, member);
         System.out.println("Member:" + member.getName() + " With ID: " + member.getMemberID() + ". Created.");
     }
-    
+    //returns member object based on name
+    public Member getMember(String name){
+        return members.get(name);
+    }
+    //returns book object based on title
+    public Book getBook(String title){
+        for(Book b : catalog) {
+            if(b.getTitle().contains(title)) {
+                return b;
+            }
+        }
+        return null;
+    }
+
+    public void printMembers(){
+        for(Member member : members.values()) {
+            System.out.println(member.toString());
+        }
+    }
     public void printCatalog() {
     	for(Book b : catalog) {
     		System.out.println(b.toString());
     	}
     }
-    
-    public boolean lookUpMember(String memberName){
-    	
-    if(members.containsKey(ID)==true) {
-    	System.out.println(members.get(ID).toString());
-    	return true;	
-    }	
-    	return false;
-    }
-    
-    
 
 }
